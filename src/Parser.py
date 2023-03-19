@@ -58,7 +58,7 @@ class Parser(object):
                 function = token_value
             elif token == 5 and token_type == ['LEFT_PATERN']:
                 l_pattern = token_value
-            elif token == 6 and token_type in ['INTEGER' , 'IDENTIFIER']:
+            elif token == 6 and token_type in ['STRING' , 'INTEGER' , 'IDENTIFIER' , 'BOOLEAN']:
                 value2 = token_value
             elif token_value == 7 and token_type == ['RIGHT_PATERN']:
                 r_pattern = token_value

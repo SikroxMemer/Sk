@@ -40,29 +40,28 @@ class ToPython(object):
             case _:
                 value2 = value2
         
-            
-        #CONVER_ADD_TO_+
-        if function == '!ADD':
-            function = '+'
-            l_pattern  , r_pattern= '' , ''
-            return name+" "+operator+" "+ value+" "+ function+l_pattern+ ' ' + value2 + r_pattern+"\n"
-        
-        #CONVERT_REMOVE_TO_-
-        elif function == '!REMOVE':
-            function = '-'
-            l_pattern  , r_pattern= '' , ''
-            return name+" "+operator+" "+ value+" "+ function+l_pattern+ ' ' + value2 + r_pattern+"\n"
-        
-        #CONVERT_CREATE_TO_OPEN('FILE' , 'X')
-        elif function == '!CREATE':
-            function = f"\nopen({name} , 'x')"
-            l_pattern  , r_pattern= '' , ''
-            self.exec_string += name+" "+operator+" "+ value+" "+ function+l_pattern+ ' ' + r_pattern+ "\n"
-            return self.exec_string
-        #CONVERT_SHOW_TO_PRINT
-        elif function == '!SHOW':
-            return name+" "+operator+" "+ value+" "+ '\n' +'print('+value2+')'+"\n"
-        else:
-            self.exec_string += name+" "+operator+" "+ value+" "+ function+l_pattern+' ' +value2 +r_pattern+"\n"
+        match function:
+            #CONVER_ADD_TO_+
+            case '!ADD':
+                function = '+'
+                l_pattern  , r_pattern= '' , ''
+                return name+" "+operator+" "+ value+" "+ function+l_pattern+ ' ' + value2 + r_pattern+"\n"
+            #CONVERT_REMOVE_TO_-
+            case '!REMOVE':
+                function = '-'
+                l_pattern  , r_pattern= '' , ''
+                return name+" "+operator+" "+ value+" "+ function+l_pattern+ ' ' + value2 + r_pattern+"\n"
+            #CONVERT_CREATE_TO_OPEN('FILE' , 'X')
+            case '!CREATE':
+                function = f"\nopen({name} , 'x')"
+                l_pattern  , r_pattern= '' , ''
+                self.exec_string += name+" "+operator+" "+ value+" "+ function+l_pattern+ ' ' + r_pattern+ "\n"
+                return self.exec_string
+            #CONVERT_SHOW_TO_PRINT
+            case '!SHOW':
+                return name+" "+operator+" "+ value+" "+ '\n' +'print('+value2+')'+"\n"
+            #DEFAULTS
+            case _:
+                self.exec_string += name+" "+operator+" "+ value+" "+ function+l_pattern+' ' +value2 +r_pattern+"\n"
+                
         return self.exec_string
-    
