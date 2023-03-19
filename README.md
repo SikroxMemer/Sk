@@ -1,9 +1,12 @@
 # Salty-Kore
-<img src=""
-Sk : Simple programming language using python
+<p align="center">
+  <img src="./src/secret/1.png" style="height: 100px; width:100px;">
+</p>
+
+Salty-Kore: Simple programming language using python
+
 >SYNTAX: 
 ```
-
 variable name_of_variable : value Function ( value );
 example :
 variable x : 500 !SHOW( x );
