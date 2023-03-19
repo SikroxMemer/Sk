@@ -1,2 +1,2 @@
-variable x : 50;
-variable y : 70;
+variable x : TRUE;
+variable y : FALSE;
