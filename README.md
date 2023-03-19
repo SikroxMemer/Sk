@@ -1,4 +1,5 @@
 # Salty-Kore
+<img src=""
 Sk : Simple programming language using python
 >SYNTAX: 
 ```
