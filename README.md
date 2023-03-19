@@ -3,7 +3,8 @@
   <img src="./src/secret/1.png" style="height: 100px; width:100px;">
 </p>
 
-Salty-Kore: Simple programming language using python
+**Salty-Kore : Static Programming Language with python interpreter as a base executer but uses both a lexer and parser to devide tokens and assign them into different     roles**
+
 
 >SYNTAX: 
 ```
